@@ -1,11 +1,13 @@
 import React from "react"
 import Layout from "../components/Layout"
 import RecipesList from "../components/RecipesList"
-import { Link, graphql } from "gatsby"
+import SEO from "../components/SEO"
+import { graphql } from "gatsby"
 const Contacts = ({ data }) => {
   const recipes = data.allContentfulRecipe.nodes
   return (
     <Layout>
+      <SEO title="Contact" />
       <main className="page">
         <setion className="contact-page">
           <article className="contact-info">
@@ -25,7 +27,11 @@ const Contacts = ({ data }) => {
             </p>
           </article>
           <article>
-            <form className="form contact-form">
+            <form
+              className="form contact-form"
+              action="https://formspree.io/f/xvolozzd"
+              method="POST"
+            >
               <div className="form-row">
                 <label htmlFor="name">your name</label>
                 <input type="text" name="name" id="name" />
